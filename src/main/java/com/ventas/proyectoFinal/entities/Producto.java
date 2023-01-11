@@ -1,5 +1,6 @@
 package com.ventas.proyectoFinal.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -33,6 +34,7 @@ public class Producto {
 //    declaro la relación con la tabla linea
     @JsonManagedReference
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Linea> linea;
 
     //constructor vacío

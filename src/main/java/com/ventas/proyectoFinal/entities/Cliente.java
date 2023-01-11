@@ -1,5 +1,6 @@
 package com.ventas.proyectoFinal.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -31,6 +32,7 @@ public class Cliente {
     //declaro la relación con la tabla comprobante
     @JsonManagedReference (value="comprobante")
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Comprobante> comprobante;
 
     //constructor vacío
