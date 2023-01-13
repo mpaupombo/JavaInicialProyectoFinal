@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.Optional;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @RestController
 @RequestMapping("/cliente")
 
@@ -34,27 +36,22 @@ public class ClienteController {
         }
     }
 
-//    @PostMapping
-//    public Cliente newEntity(@RequestBody Cliente cliente) {
-//        return this.clienteServicio.guardar(cliente);
-//    }
 
     //---------------------------------------------------------
     //READ -------------------------
 ////    //http://localhost:8080/cliente/{id}
-//    @GetMapping("/{id}")
-//    public Optional<Cliente> one(@PathVariable Integer id) {
-//
-//        return this.clienteServicio.buscarpPorID(Long.valueOf(id));
-//    }
+    @GetMapping("/{id}")
+    public Optional<Cliente> one(@PathVariable Integer id) {
+
+        return this.clienteServicio.buscarpPorID(Long.valueOf(id));
+    }
 ////
 //    //---------------------------------------------------------
 //    //DELETE -------------------------
 //    //http://localhost:8080/cliente/borrar/1
-//    @DeleteMapping(value = "borrar/{id}")
-//    public ResponseEntity<?> borrarClientePorID(@PathVariable(name = "id") final Long id) {
-//        borrarClientePorID();
-//        return ResponseEntity.ok("Cliente Borrado");
-//    }
+    @DeleteMapping(value = "/borrar/{id}")
+    public void two(@PathVariable Integer id){
+        this.clienteServicio.borrarCliente(Long.valueOf(id));
+    }
 
 }

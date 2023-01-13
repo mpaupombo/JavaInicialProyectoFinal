@@ -1,0 +1,8 @@
+com\ventas\proyectoFinal\entities\Comprobante.class
+com\ventas\proyectoFinal\controllers\ClienteController.class
+com\ventas\proyectoFinal\ProyectoFinalApplication.class
+com\ventas\proyectoFinal\repository\ClienteRepository.class
+com\ventas\proyectoFinal\entities\Cliente.class
+com\ventas\proyectoFinal\entities\Producto.class
+com\ventas\proyectoFinal\Services\ClienteServicio.class
+com\ventas\proyectoFinal\entities\Linea.class
